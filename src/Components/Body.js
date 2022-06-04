@@ -25,6 +25,7 @@ const Body = () => {
         <Routes>
             <Route exact path = "/" element = {<Home/>} />
             <Route exact path = "/sell" element = {<Sell />} />
+            <Route exact path = "/results/:query" element = {<Sell />} />
         </Routes>
         </div>
         
