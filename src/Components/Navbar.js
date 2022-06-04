@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { auth } from '../Firebase';
-import { signOut } from 'firebase/auth';
+// import { signOut } from 'firebase/auth';
+import SearchBox from './SearchBox';
 
 const Navbar = ({search,setSearch,user}) => {
     const handleSignOut  = (e) =>{
@@ -28,18 +29,15 @@ const Navbar = ({search,setSearch,user}) => {
             Categories
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item" href="#">Gadgets</a>
-            <a className="dropdown-item" href="#">Textbooks</a>
+            <Link className="dropdown-item" to="/categories/Gadgets">Gadgets</Link>
+            <Link className="dropdown-item" to="/categories/Textbooks">Textbooks</Link>
             {/* <div className="dropdown-divider"></div> */}
-            <a className="dropdown-item" href="#">Vehicles</a>
-            <a className="dropdown-item" href="#">Accessories</a>
+            <Link className="dropdown-item" to = "/categories/Vehicles">Vehicles</Link>
+            <Link className="dropdown-item" to="/categories/Accessories">Accessories</Link>
           </div>
         </li>
       </ul>
-      <form className="form-inline my-2 my-lg-0">
-        <input value = {search} onChange={(e)=>setSearch(e.target.value)} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success my-2 my-sm-0" disabled = {search.length===0?true:false}>Search</button>
-      </form>
+      <SearchBox search = {search} setSearch = {setSearch}></SearchBox>
       {user&& <img src={user} alt="userimg" style={{width:"50px",height:"50px",borderRadius:"50%",marginRight:"20px"}} />}
       
       <button className='btn btn-dark' onClick = {handleSignOut}>Logout</button>

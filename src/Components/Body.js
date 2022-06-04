@@ -6,6 +6,9 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import {Routes,Route} from 'react-router-dom';
 import Sell from './Sell';
+import Categories from './Categories';
+import Results from './Results';
+import Product from './Product';
 
 const Body = () => {
     const [user,setUser] = useState();
@@ -23,8 +26,12 @@ const Body = () => {
         <Navbar  search = {search} user = {user} setSearch = {setSearch}  />
         <div className="container">
         <Routes>
-            <Route exact path = "/" element = {<Home/>} />
+            <Route exact path = "/" element = {<Home />} />
             <Route exact path = "/sell" element = {<Sell />} />
+            <Route exact path = "/categories/:category" element = {<Categories />} />
+            <Route exact path = "/search/:pname" element = {<Results />} />
+            <Route exact path = "/product/:id" element = {<Product />} />
+            
             <Route exact path = "/results/:query" element = {<Sell />} />
         </Routes>
         </div>

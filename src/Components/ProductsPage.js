@@ -19,7 +19,6 @@ const ProductsPage = ({ type }) => {
             <h2>Displaying {type} Products</h2>
             <div className="row mt-5">
                 {posts.length!==0?posts.map((card)=><Card key = {card.id} post = {card.data()} />):""}     
-                
             </div>
         </div>
     )

@@ -13,3 +13,9 @@
 .carousel-caption-custom{
   bottom:180px;
 }
+
+.categoriesSearch{
+  display: grid;
+  place-items: center ;
+  margin:2rem 0;
+}
