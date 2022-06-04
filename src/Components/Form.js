@@ -41,6 +41,7 @@ const Form = () => {
                 usn,
                 price,
                 college,
+                select,
                 year,
                 desc,
                 state,
