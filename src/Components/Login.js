@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles/login.css';
 
+
 const Login = () => {
     return (
         <div>
             <img className="wave" src="3.png" />
-	<div className="container">
+	<div className="containerLogin">
 		<div className="img">
 			<img src="4.svg" />
 		</div>
@@ -20,7 +21,7 @@ const Login = () => {
            		  
            		</div>
            		
-            	<input type="submit" className="btn" value="Login With Google" />
+            	<input type="submit" className="button" value="Login With Google" />
             </form>
         </div>
     </div>

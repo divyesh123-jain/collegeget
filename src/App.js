@@ -8,14 +8,14 @@ import Login from './Components/Login'
 function App() {
   return (
     <>
-    <Login />
-    {/* <Navbar />
+    {/* <Login /> */}
+    <Navbar />
     <div className='container'>
     <Routes>
       <Route exact path = "/" element = {<Home></Home>} />
       <Route exact path = "/sell" element = {<Sell />} />
     </Routes>      
-    </div> */}
+    </div>
     </>  
     );
 }
