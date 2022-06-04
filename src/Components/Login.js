@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import './styles/login.css';
 import { auth } from '../Firebase';
-import { signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { onAuthStateChanged, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-	const handleSignIn = () => {
-		// console.log(authentication);
+	const navigate = useNavigate();
+	const [user, setUser] = useState();
+	useEffect(() => {
+		onAuthStateChanged(auth,(currentUser)=>{
+			if(currentUser) navigate('/') ;
+		  })
+	}, [])
+	
+	const handleSignIn = (e) => {
+		e.preventDefault();
 		const provider = new GoogleAuthProvider();
-		signInWithPopup(auth, provider)
+		signInWithRedirect(auth, provider)
 			.then((result) => {
-				// This gives you a Google Access Token. You can use it to access the Google API.
 				const credential = GoogleAuthProvider.credentialFromResult(result);
-				const token = credential.accessToken;
-				// The signed-in user info.
-				const user = result.user;
-				console.log(user);
-				// ...
+				setUser(credential);
 			}).catch((error) => {
-				// Handle Errors here.
-				const errorCode = error.code;
-				const errorMessage = error.message;
-				// The email of the user's account used.
-				const email = error.customData.email;
-				// The AuthCredential type that was used.
-				const credential = GoogleAuthProvider.credentialFromError(error);
-				// ...
+				console.log(error)
 			});
 	}
 

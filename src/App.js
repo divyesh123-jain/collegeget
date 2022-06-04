@@ -7,30 +7,22 @@ import Sell from './Components/Sell';
 import Login from './Components/Login'
 import {onAuthStateChanged} from 'firebase/auth';
 import {useState} from 'react';
+import Body from './Components/Body';
 
 function App() {
   const[user,setUser] = useState();
-  onAuthStateChanged(auth,(currentUser)=>{
-    if(currentUser) setUser(currentUser);
-  })
-  if(user){
+  
   return (
     <>
-    {/* <Login /> */}
-    <Navbar />
-    <div className='container'>
+
     <Routes>
-      <Route exact path = "/" element = {<Home></Home>} />
-      <Route exact path = "/sell" element = {<Sell />} />
       <Route exact path = "/login" element = {<Login />} />
+      <Route exact path = "*" element = {<Body />} />
     </Routes>      
-    </div>
+
     </>  
     );
-  }
-  return(
-    <Login />
-  )
+  
 }
 
 export default App;

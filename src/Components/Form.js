@@ -11,11 +11,11 @@ const Form = () => {
                 </div>
                 <input type="text" className="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="basic-addon1" />
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Catagories</label>
+            <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                    <label className="input-group-text" htmlFor="inputGroupSelect01">Catagories</label>
                 </div>
-                <select class="custom-select" onChange = {(e)=>setSelect(e.target.value)} value = {select} id="inputGroupSelect01">
+                <select className="custom-select" onChange = {(e)=>setSelect(e.target.value)} value = {select} id="inputGroupSelect01">
                     <option selected>Choose...</option>
                     <option value="Gadgets">Gadgets</option>
                     <option value="Vehicles">Vehicles</option>

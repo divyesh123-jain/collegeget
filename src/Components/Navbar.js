@@ -1,7 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { auth } from '../Firebase';
+import { signOut } from 'firebase/auth';
 
-const Navbar = () => {
+const Navbar = ({search,setSearch,user}) => {
+    const handleSignOut  = (e) =>{
+        e.preventDefault();
+        auth.signOut();
+    }
   return (
     <div><nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="#">CollegeGet</a>
@@ -29,14 +35,14 @@ const Navbar = () => {
             <a className="dropdown-item" href="#">Accessories</a>
           </div>
         </li>
-        {/* <li className="nav-item">
-          <a className="nav-link disabled">Disabled</a>
-        </li> */}
       </ul>
       <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input value = {search} onChange={(e)=>setSearch(e.target.value)} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success my-2 my-sm-0" disabled = {search.length===0?true:false}>Search</button>
       </form>
+      {user&& <img src={user} alt="userimg" style={{width:"50px",height:"50px",borderRadius:"50%",marginRight:"20px"}} />}
+      
+      <button className='btn btn-dark' onClick = {handleSignOut}>Logout</button>
     </div>
   </nav>
   </div>
