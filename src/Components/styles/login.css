@@ -173,7 +173,7 @@ a:hover{
 
 
 @media screen and (max-width: 1050px){
-	.container{
+	.containeLogin{
 		grid-gap: 5rem;
 	}
 }
