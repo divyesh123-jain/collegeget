@@ -16,7 +16,7 @@ const Form = () => {
             setUser(currentUser);
             console.log(currentUser);
             // console.log(currentUser.photoURL);
-		  })
+		  });
 	}, [])
     const [select, setSelect] = useState('Choose');
     const [pname,setPname] = useState('');
@@ -27,6 +27,8 @@ const Form = () => {
     const [shareImage, setShareImage] = useState('');
     const [price,setPrice] = useState('');
     const [year,setYear] = useState('');
+    const [usn,setUsn] = useState('');
+    const [college,setCollege] = useState("");
 
     const sendPost = async () => {
         try {
@@ -36,7 +38,9 @@ const Form = () => {
                 sname:user.displayName,
                 pname,
                 phone,  
+                usn,
                 price,
+                college,
                 year,
                 desc,
                 state,
@@ -101,6 +105,8 @@ const Form = () => {
         setPhone("");
         setState("");
         setCity("");
+        setCollege("");
+        setPrice("");
         setShareImage();
         setSelect('Choose');
 }
@@ -125,13 +131,20 @@ const Form = () => {
             </div>
             <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                    <label className="input-group-text" htmlFor="inputGroupSelect01">Catagories</label>
+                    <span className="input-group-text" id="basic-addon1">USN</span>
+                </div>
+                <input required type="text" value ={usn} onChange = {(e)=>setUsn(e.target.value)} className="form-control" placeholder="Enter USN" aria-label="Username" aria-describedby="basic-addon1" />
+            </div>
+            <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                    <label className="input-group-text" htmlFor="inputGroupSelect01">Category</label>
                 </div>
                 <select required className="custom-select" onChange={(e) => setSelect(e.target.value)} value={select} id="inputGroupSelect01">
                     <option selected>Choose...</option>
                     <option value="Gadgets">Gadgets</option>
                     <option value="Vehicles">Vehicles</option>
                     <option value="Textbooks">Textbooks</option>
+                    <option value="Textbooks">Accessories</option>
                 </select>
             </div>
 
@@ -170,15 +183,22 @@ const Form = () => {
             
             <div className="input-group mt-2 mb-3">
                 <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon1">College Name</span>
+                </div>
+                <input required type="text" className="form-control" style = {{textTransform:"capitalize"}} placeholder="College Name" value = {college} onChange = {(e)=>setCollege(e.target.value)} aria-label="Username" aria-describedby="basic-addon1" />
+            </div>
+            
+            <div className="input-group mt-2 mb-3">
+                <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">State</span>
                 </div>
-                <input required type="text" className="form-control" placeholder="State" value = {state} onChange = {(e)=>setState(e.target.value)} aria-label="Username" aria-describedby="basic-addon1" />
+                <input required style = {{textTransform:"capitalize"}} type="text" className="form-control" placeholder="State" value = {state} onChange = {(e)=>setState(e.target.value)} aria-label="Username" aria-describedby="basic-addon1" />
             </div>
             <div  className="input-group mt-2 mb-3">
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="basic-addon1">City</span>
                 </div>
-                <input required type="text" className="form-control" value ={city} onChange = {(e)=>setCity(e.target.value)} placeholder="City" aria-label="Username" aria-describedby="basic-addon1" />
+                <input required style = {{textTransform:"capitalize"}} type="text" className="form-control" value ={city} onChange = {(e)=>setCity(e.target.value)} placeholder="City" aria-label="Username" aria-describedby="basic-addon1" />
             </div>
             <button className='btn btn-primary'>
                 <input required
