@@ -31,7 +31,7 @@ const MyAds = () => {
                 <><>
         </><h2>My Ads</h2><div className="row">
                 {console.log(posts)}
-                {posts.map((card) => <Card key={card.id} post={card.data()} />)}
+                {posts.map((card) => <Card del key={card.id} post={card.data()} />)}
             </div></>
 
 

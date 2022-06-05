@@ -7,7 +7,6 @@ import { db } from '../Firebase';
 const Results = () => {
     const[posts,setPosts] =useState([]);
     const {pname} = useParams();
-    console.log(pname);
     
     useEffect(
         () =>
@@ -17,12 +16,12 @@ const Results = () => {
                     setPosts(snapshot.docs);
                 }
             )
-        , [db])
+        , [pname])
     return (
         <>
         <h2>Showing Results For query</h2>
     <div className='row'>
-        {posts.length!=0?posts.map((res)=><Card key ={res.id} post ={res.data()} />):"Nothing To Show"}
+        {posts.length!==0?posts.map((res)=><Card key ={res.id} post ={res.data()} />):"Nothing To Show"}
     </div>
     </>
   )

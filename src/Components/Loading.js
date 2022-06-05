@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';    
 import { loadingState } from '../Atom/LoadingState';
-import { useSetRecoilState,useRecoilValue } from 'recoil';
+import {useRecoilValue } from 'recoil';
 // import loading from 'giphy.gif';
 
 const Loading = ({showLoading}) => {

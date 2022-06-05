@@ -17,7 +17,7 @@ const Form = () => {
             console.log(currentUser);
             // console.log(currentUser.photoURL);
 		  });
-	}, [])
+	}, [navigate])
     const [select, setSelect] = useState('Choose');
     const [pname,setPname] = useState('');
     const [phone,setPhone] = useState('');
@@ -142,11 +142,10 @@ const Form = () => {
                     <label className="input-group-text" htmlFor="inputGroupSelect01">Category</label>
                 </div>
                 <select required className="custom-select" onChange={(e) => setSelect(e.target.value)} value={select} id="inputGroupSelect01">
-                    <option selected>Choose...</option>
                     <option value="Gadgets">Gadgets</option>
                     <option value="Vehicles">Vehicles</option>
                     <option value="Textbooks">Textbooks</option>
-                    <option value="Textbooks">Accessories</option>
+                    <option value="Accessories">Accessories</option>
                 </select>
             </div>
 

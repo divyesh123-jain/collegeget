@@ -11,7 +11,7 @@ const Login = () => {
 		onAuthStateChanged(auth,(currentUser)=>{
 			if(currentUser) navigate('/') ;
 		  })
-	}, [])
+	}, [navigate])
 	
 	const handleSignIn = (e) => {
 		e.preventDefault();
@@ -27,14 +27,14 @@ const Login = () => {
 
 	return (
 		<div>
-			<img className="wave" src="3.png" />
+			<img className="wave" src="3.png" alt = "wave" />
 			<div className="containerLogin">
 				<div className="img">
-					<img src="4.svg" />
+					<img src="4.svg" alt ="4" />
 				</div>
 				<div className="login-content">
 					<form>
-						<img src="5.svg" />
+						<img src="5.svg" alt ="5" />
 						<h2 className="title">Welcome</h2>
 						<div className="input-div one">
 							<div className="i">

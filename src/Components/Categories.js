@@ -18,7 +18,7 @@ const Categories = () => {
                         setPosts(snapshot.docs);
                     }
                 )
-        , [db])
+        , [category])
     return (
         <>
             <div className='categoriesSearch'>

@@ -21,7 +21,7 @@ const Body = () => {
             setUser(currentUser.photoURL);
             // console.log(currentUser.photoURL);
 		  })
-	}, [])
+	}, [navigate])
   return (
     <div>
         <Navbar  search = {search} user = {user} setSearch = {setSearch}  />

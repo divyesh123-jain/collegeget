@@ -11,7 +11,7 @@ const Navbar = ({search,setSearch,user}) => {
     }
   return (
     <div><nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <a className="navbar-brand" href="#">CollegeGet</a>
+    <Link className="navbar-brand" to="/">CollegeGet</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,7 @@ const Navbar = ({search,setSearch,user}) => {
           <Link className="nav-link" to="/myads">My Ads</Link>
         </li>
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
             Categories
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">

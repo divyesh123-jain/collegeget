@@ -1,12 +1,12 @@
 import { Routes,Route } from 'react-router-dom';
 import './App.css';
-import { auth } from './Firebase';
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import Sell from './Components/Sell';
+// import { auth } from './Firebase';
+// import Navbar from './Components/Navbar';
+// import Home from './Components/Home';
+// import Sell from './Components/Sell';
 import Login from './Components/Login'
-import {onAuthStateChanged} from 'firebase/auth';
-import {useState} from 'react';
+// import {onAuthStateChanged} from 'firebase/auth';
+// import {useState} from 'react';
 import Body from './Components/Body';
 import Loading from './Components/Loading';
 
