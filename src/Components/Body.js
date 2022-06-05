@@ -9,6 +9,7 @@ import Sell from './Sell';
 import Categories from './Categories';
 import Results from './Results';
 import Product from './Product';
+import MyAds from './MyAds';
 
 const Body = () => {
     const [user,setUser] = useState();
@@ -28,6 +29,7 @@ const Body = () => {
         <Routes>
             <Route exact path = "/" element = {<Home />} />
             <Route exact path = "/sell" element = {<Sell  />} />
+            <Route exact path = "/myads" element = {<MyAds  />} />
             <Route exact path = "/categories/:category" element = {<Categories />} />
             <Route exact path = "/search/:pname" element = {<Results />} />
             <Route exact path = "/product/:id" element = {<Product />} />

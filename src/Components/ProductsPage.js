@@ -8,7 +8,7 @@ const ProductsPage = ({ type }) => {
     useEffect(
         () => 
             onSnapshot(
-                query(collection(db,"posts") ,orderBy("time","desc")),
+                query(collection(db,"posts") ,orderBy("time","asc")),
                 (snapshot) => {
                     setPosts(snapshot.docs);
                 }

@@ -12,12 +12,12 @@ const Categories = () => {
     const [posts, setPosts] = useState([]);
     useEffect(
         () =>
-            onSnapshot(
-                query(collection(db, "posts"), where("select", "==", category), orderBy("time")),
-                (snapshot) => {
-                    setPosts(snapshot.docs);
-                }
-            )
+                onSnapshot(
+                    query(collection(db, "posts"), where("select", "==", category), orderBy("time")),
+                    (snapshot) => {
+                        setPosts(snapshot.docs);
+                    }
+                )
         , [db])
     return (
         <>

@@ -36,9 +36,11 @@ const Product = () => {
                                 <p style={{ textTransform: "capitalize" }}>City : {product.data().city}</p>
                                 <p style={{ textTransform: "capitalize" }}>State : {product.data().state}</p>
                                 <p style={{ textTransform: "capitalize" }}>College : {product.data().college}</p>
+                                <p style={{ textTransform: "capitalize" }}>Price : &#8377; {product.data().price}</p>
+                                <p style={{ textTransform: "capitalize" }}>Year :  {product.data().year}</p>
 
                             </div>
-                            <a href = {`mailto:${product.email}`} className='btn btn-primary'>Contact Seller</a>
+                            <a href = {`mailto:${product.data().email}`} className='btn btn-primary'>Contact Seller</a>
                         </div>
                     </div>
 
