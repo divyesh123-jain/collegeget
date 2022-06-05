@@ -74,7 +74,7 @@ const Form = () => {
                         const imgURL = await getDownloadURL(uploadTask.snapshot.ref);
                         const update = await updateDoc(doc(db, "posts",docRef.id),{
                             img:imgURL,
-                            id:docRef.id
+                            id:docRef.id,
                         })
                         // console.log(imgURL);
                         reset();

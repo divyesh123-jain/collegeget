@@ -27,7 +27,7 @@ const Body = () => {
         <div className="container">
         <Routes>
             <Route exact path = "/" element = {<Home />} />
-            <Route exact path = "/sell" element = {<Sell />} />
+            <Route exact path = "/sell" element = {<Sell  />} />
             <Route exact path = "/categories/:category" element = {<Categories />} />
             <Route exact path = "/search/:pname" element = {<Results />} />
             <Route exact path = "/product/:id" element = {<Product />} />

@@ -19,3 +19,10 @@
   place-items: center ;
   margin:2rem 0;
 }
+
+.dflex{
+  display: flex;
+}
+.hidden{
+  display: none;
+}

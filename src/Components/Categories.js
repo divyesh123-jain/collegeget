@@ -5,6 +5,7 @@ import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestor
 import { db } from '../Firebase';
 import Card from './Card';
 
+
 const Categories = () => {
     const { category } = useParams();
     const [search, setSearch] = useState("");

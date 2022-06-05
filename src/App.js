@@ -8,13 +8,15 @@ import Login from './Components/Login'
 import {onAuthStateChanged} from 'firebase/auth';
 import {useState} from 'react';
 import Body from './Components/Body';
+import Loading from './Components/Loading';
+
 
 function App() {
-  const[user,setUser] = useState();
+
   
   return (
     <>
-
+    <Loading />
     <Routes>
       <Route exact path = "/login" element = {<Login />} />
       <Route exact path = "*" element = {<Body />} />
